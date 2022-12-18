@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="stylesheet" href="./styles/styles.css" />
+
+		<title>Tip calculator app</title>
+	</head>
+	<body>
+		<header>
+			<img src="./images/logo.svg" alt="splitter logo" id="logo" />
+		</header>
+		<main>
+			<form>
+				<label for="input-bill">Bill</label>
+				<input type="number" placeholder="0" id="input-bill" />
+				<label for="tip"></label>
+				<fieldset class="container-tip">
+					<legend>Select Tip %</legend>
+					<label for="button-tip-5%">
+						<input
+							type="button"
+							value="5%"
+							class="button-tip"
+							id="button-tip-5%"
+						/>
+					</label>
+					<label for="button-tip-10%">
+						<input
+							type="button"
+							value="10%"
+							class="button-tip"
+							id="button-tip-10%"
+					/></label>
+					<label for="button-tip-15%">
+						<input
+							type="button"
+							value="15%"
+							class="button-tip"
+							id="button-tip-15%"
+					/></label>
+					<label for="button-tip-25%">
+						<input
+							type="button"
+							value="25%"
+							class="button-tip"
+							id="button-tip-25%"
+					/></label>
+					<label for="button-tip-50%">
+						<input
+							type="button"
+							value="50%"
+							class="button-tip"
+							id="button-tip-50%"
+					/></label>
+					<label for="input-custom">
+						<input
+							type="number"
+							placeholder="Custom"
+							id="input-custom"
+							maxlength="5"
+					/></label>
+				</fieldset>
+
+				<label for="input-people">Number of People</label>
+				<input type="number" id="input-people" placeholder="0" />
+			</form>
+
+			<aside>
+				<article class="container">
+					<div class="aside-left">
+						<span class="big">Tip Amount</span
+						><span class="small">/ person</span>
+					</div>
+					<div class="aside-right" id="tip-amount">$0.00</div>
+				</article>
+				<article class="container">
+					<div class="aside-left">
+						<span class="big">Total</span
+						><span class="small">/ person</span>
+					</div>
+					<div class="aside-right" id="total">$0.00</div>
+				</article>
+				<button type="button" id="reset-button">Reset</button>
+			</aside>
+		</main>
+	</body>
+</html>
+<script src="./script.js"></script>

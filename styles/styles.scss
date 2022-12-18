@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@1,700&display=swap');
+
+// FONTS
+$font-family-space-mono: 'Space Mono', monospace;
+$font-size-inputs: 24px;
+$font-weight-bold: 700;
+
+// COLORS
+$primary-strong-cyan: hsl(172, 67%, 45%);
+
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family-space-mono;
+    font-weight: $font-weight-bold;
+}
+
+body{
+    min-height:100vh;  
+    width: 100vw;
+    background-color:$light-grayish-cyan ;
+}
+
+#logo{
+    margin:3rem auto 2.5rem auto;
+    display: block;
+}
+
+main{
+    margin: auto;
+    padding:2rem 1.5rem;
+    background-color: $white;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    width:375px;
+    form{
+        padding:0.5rem;
+
+        label, legend{
+            color:$dark-grayish-cyan;
+        }
+        legend{
+            margin-bottom:1rem;
+        }
+        input{
+            font-size:$font-size-inputs;
+        }
+
+        // Removes the annoying spinners, not supported on all browsers!
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button {
+            appearance: none;
+        }
+        #input-bill::placeholder, #input-people::placeholder{
+            color:$grayish-cyan;
+        }
+        #input-bill:focus, #input-people:focus{
+            outline:none;
+            border:1px solid $primary-strong-cyan;
+        }
+        #input-bill{
+            background:url("/images/icon-dollar.svg") no-repeat scroll 1rem 13px;
+        }
+        #input-people{
+            background:url("/images/icon-person.svg") no-repeat 1rem 13px;
+        }
+        #input-bill, #input-people{
+            width:100%;
+            background-color:$very-light-grayish-cyan;
+            border:none;
+            height:44px;
+            text-align: right;
+            color:$very-dark-cyan;
+            border-radius:6px;
+            margin-top:0.5rem;
+            margin-bottom:2rem;
+            padding-right:0.5rem;
+        }
+
+        .container-tip{
+            display: flex;
+            flex-wrap: wrap;
+            flex: 1 1 40%;
+            gap:1rem;
+            margin-top:0.2rem;
+            margin-bottom:2.2rem;
+            border:none;
+
+            input{
+                width:9rem;
+                height:3rem;
+                border:none;
+                border-radius:6px;
+            }
+            .button-tip{
+                background-color:$very-dark-cyan;
+                color:$very-light-grayish-cyan;
+                cursor:pointer;
+            }
+            
+            #input-custom{
+                text-align: right;
+                color:$very-dark-cyan;
+                padding-right:1rem;
+                background-color:$very-light-grayish-cyan;
+            }
+            #input-custom::placeholder{
+                color:$dark-grayish-cyan;
+            }
+            #input-custom:focus{
+                outline:none;
+                border:2px solid $primary-strong-cyan;
+            }
+            #input-custom:focus::placeholder{
+                color:transparent;
+            }
+        }
+        
+    }
+    aside{
+        background-color: $very-dark-cyan;
+        padding:0.7rem 1.5rem 1.5rem 1.5rem;
+        border-radius:1rem;
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:2rem 0;
+
+            .aside-left{
+                .big{
+                    color:$light-grayish-cyan;
+                    font-size:105%;
+                }
+                .small{
+                    color:$grayish-cyan;
+                    display: block;
+                    font-size:90%;
+                    margin-top:2px;
+                }
+            }
+            .aside-right{
+                font-size:$font-size-inputs;
+                color:$primary-strong-cyan;
+                font-size:32px;
+            }
+            
+        }
+        button{
+            font-size:$font-size-inputs;
+            width:100%;
+            height:3rem;
+            text-transform: uppercase;
+            background-color: $primary-strong-cyan;
+            border:none;
+            cursor:pointer;
+            border-radius:6px;
+            color:$very-dark-cyan;
+        }
+    }
+}
+.focused{
+    background-color: $primary-strong-cyan!important;
+    color:$very-dark-cyan!important;
+}
+.custom-button-focused{
+    border: 2px solid $primary-strong-cyan!important;
+}
+
+@media (min-width:800px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+
+        #logo{
+            margin: 0;
+        }
+    }
+    main{
+        display: flex;
+        width:700px;
+        margin: 4rem 0;
+        padding:1.5rem;
+        gap:1.8rem;
+        border-radius:1.5rem;
+        
+        form{
+            flex:1;
+
+            label, legend{
+                font-size:12px;
+            }
+            #input-bill, #input-people{
+                height:36px;
+                background-position: 1rem 8px;
+            }
+            #input-people{
+                margin-bottom:0;
+            }
+            .container-tip{
+                flex: 1 1 30%;
+                gap:0.75rem;
+                margin-bottom:1.8rem;
+                input{
+                    transition: all 0.25s ease-out;
+                    height:2.3rem;
+                    width:5.4rem;
+                    font-size:20px;
+                }
+                #input-custom{
+                    padding-right:0.5rem;
+
+                }
+                .button-tip:hover{
+                    background-color: $primary-strong-cyan;
+                    color:$very-dark-cyan;
+                }
+
+            }
+        }
+        aside{
+            width: 315px;
+
+            .container{
+                padding:0 0.5rem;
+
+                .aside-left{
+                    .big{
+                        font-size:95%;
+                    }
+                    .small{
+                        font-size:70%;
+                    }
+                }
+            }
+            button{
+                margin-top:4.5rem;
+                height:38px;
+                font-size:20px;
+            }
+        }
+    }
+}
