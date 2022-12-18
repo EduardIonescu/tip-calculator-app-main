@@ -57,10 +57,10 @@ main form #input-bill:focus, main form #input-people:focus {
   border: 1px solid hsl(172deg, 67%, 45%);
 }
 main form #input-bill {
-  background: url("/images/icon-dollar.svg") no-repeat scroll 1rem 13px;
+  background: url("../images/icon-dollar.svg") no-repeat scroll 1rem 13px;
 }
 main form #input-people {
-  background: url("/images/icon-person.svg") no-repeat 1rem 13px;
+  background: url("../images/icon-person.svg") no-repeat 1rem 13px;
 }
 main form #input-bill, main form #input-people {
   width: 100%;
